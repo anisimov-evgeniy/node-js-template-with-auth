@@ -8,6 +8,11 @@ import {
 } from 'typeorm';
 import { Child } from '../child/child.entity'; // Импорт сущности Child
 
+export enum UserRole {
+  ADMIN = 'admin',
+  USER = 'user',
+}
+
 @Entity()
 export class User {
   @PrimaryGeneratedColumn()
@@ -24,6 +29,14 @@ export class User {
 
   @OneToMany(() => Child, (child) => child.user)
   children: Child[]; // Связь с детьми
+
+  @Column({
+    type: 'enum',
+    enum: UserRole,
+    array: true, // Указание, что поле является массивом
+    default: [UserRole.USER], // По умолчанию обычный пользователь
+  })
+  roles: UserRole[]; // Роли пользователя как массив
 
   @CreateDateColumn()
   createdAt: Date;

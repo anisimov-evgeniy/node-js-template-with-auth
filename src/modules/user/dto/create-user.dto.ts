@@ -1,5 +1,14 @@
-import { IsString, IsEmail, MinLength } from 'class-validator';
+import {
+  IsString,
+  IsEmail,
+  MinLength,
+  IsOptional,
+  ArrayMinSize,
+  IsArray,
+  IsEnum,
+} from 'class-validator';
 import { ApiProperty } from '@nestjs/swagger';
+import { UserRole } from '../user.entity';
 
 export class CreateUserDto {
   @ApiProperty({
@@ -23,4 +32,17 @@ export class CreateUserDto {
   @IsString()
   @MinLength(12, { message: 'Password must be at least 12 characters long' })
   readonly password: string;
+
+  @ApiProperty({
+    description: 'Roles assigned to the user',
+    example: [UserRole.USER, UserRole.ADMIN],
+    required: false,
+    enum: UserRole,
+    isArray: true,
+  })
+  @IsOptional()
+  @IsArray()
+  @ArrayMinSize(1, { message: 'At least one role must be specified' })
+  @IsEnum(UserRole, { each: true }) // Проверяет, что каждый элемент массива соответствует перечислению UserRole
+  readonly roles?: UserRole[];
 }

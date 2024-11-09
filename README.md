@@ -1,99 +1,73 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Основные библиотеки для проекта на NestJS
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+База данных и ORM
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+	•	@nestjs/typeorm
+Интеграция TypeORM с NestJS для работы с базой данных с использованием репозиториев и сущностей.
+•	typeorm
+ORM (Object-Relational Mapping) для работы с базами данных. Поддерживает PostgreSQL, MySQL, SQLite и другие базы.
+•	pg
+Драйвер PostgreSQL для Node.js. Используется TypeORM для подключения к базе данных PostgreSQL.
 
-## Description
+Валидация и трансформация данных
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+	•	class-validator
+Библиотека для валидации объектов, которая позволяет легко проверять входные данные через декораторы.
+•	class-transformer
+Библиотека для трансформации объектов (например, преобразование plain объектов в экземпляры классов).
 
-## Project setup
+Аутентификация и авторизация
 
-```bash
-$ npm install
-```
+	•	@nestjs/passport
+Модуль NestJS для интеграции с библиотекой Passport, предоставляющий мощный механизм аутентификации.
+•	passport
+Популярная библиотека для аутентификации с поддержкой множества стратегий (например, JWT).
+•	@nestjs/jwt
+Модуль для работы с JWT (JSON Web Tokens), используемый в аутентификации.
+•	passport-jwt
+Стратегия для аутентификации с использованием JWT в библиотеке Passport.
 
-## Compile and run the project
+Конфигурация
 
-```bash
-# development
-$ npm run start
+	•	@nestjs/config
+Модуль для работы с конфигурацией и переменными окружения в NestJS.
 
-# watch mode
-$ npm run start:dev
+Документация API
 
-# production mode
-$ npm run start:prod
-```
+	•	@nestjs/swagger
+Модуль для генерации документации API с использованием Swagger в приложениях на NestJS.
+•	swagger-ui-express
+Компонент для визуализации документации Swagger через Express.
 
-## Run tests
+Хеширование паролей
 
-```bash
-# unit tests
-$ npm run test
+	•	bcrypt
+Библиотека для хеширования паролей.
+•	@types/bcrypt
+Типы TypeScript для библиотеки bcrypt.
 
-# e2e tests
-$ npm run test:e2e
+HTTP-запросы
 
-# test coverage
-$ npm run test:cov
-```
+	•	axios
+Популярная библиотека для выполнения HTTP-запросов. Может использоваться для интеграции с внешними API.
 
-## Deployment
+Безопасность
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+	•	@nestjs/platform-express (включает Helmet)
+Платформенный адаптер для NestJS, который включает поддержку Express и позволяет использовать Helmet для базовой безопасности HTTP-заголовков.
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Очереди и фоновые задачи (опционально)
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+	•	@nestjs/bull
+Модуль для работы с очередями и фоновыми задачами в NestJS на основе библиотеки Bull.
+•	bull
+Библиотека для обработки фоновых задач и очередей на основе Redis.
+•	redis
+Драйвер для работы с Redis, используемый в библиотеке Bull.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+Логгирование (опционально)
 
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+	•	nest-winston
+Модуль для интеграции библиотеки логгирования Winston с NestJS.
+•	winston
+Универсальная библиотека для логгирования в Node.js с поддержкой множества транспортов и форматов.
