@@ -4,11 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './modules/user/user.module';
-import { ChildModule } from './modules/child/child.module';
 import { User } from './modules/user/user.entity';
-import { Child } from './modules/child/child.entity';
-import { ActivityRecordModule } from './modules/activityRecord/activity-record.module';
-import { ActivityRecord } from './modules/activityRecord/activity-record.entity';
 import { TerminusModule } from '@nestjs/terminus';
 import { HealthController } from './health/health.controller';
 import { JwtAuthGuard } from './modules/auth/jwt/jwt-auth.guard';
@@ -30,15 +26,13 @@ import { AuthModule } from './modules/auth/auth.module';
         username: configService.get<string>('DATABASE_USER'),
         password: configService.get<string>('DATABASE_PASSWORD'),
         database: configService.get<string>('DATABASE_NAME'),
-        entities: [User, Child, ActivityRecord],
+        entities: [User],
         synchronize: configService.get<string>('NODE_ENV') !== 'production',
       }),
     }),
     TerminusModule,
     AuthModule,
     UserModule,
-    ChildModule,
-    ActivityRecordModule,
   ],
   controllers: [AppController, HealthController],
   providers: [

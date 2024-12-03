@@ -38,6 +38,8 @@ export class AuthService {
     };
   }
 
+  // todo: edit для чилдов, активностей + регистрация (с возможностью зайти через соц сети)
+
   async refreshToken(refreshToken: string) {
     try {
       const decoded = this.jwtService.verify(refreshToken); // Проверяем refresh token

@@ -16,8 +16,8 @@ async function bootstrap() {
 
   // Настройка Swagger
   const config = new DocumentBuilder()
-    .setTitle('Mom Helper API') // Название вашей API документации
-    .setDescription('API for the Mom Helper application') // Описание API
+    .setTitle('Project API') // Название вашей API документации
+    .setDescription('API for the *Project name* application') // Описание API
     .setVersion('1.0') // Версия API
     .addBearerAuth(
       {

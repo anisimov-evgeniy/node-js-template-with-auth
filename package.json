@@ -1,8 +1,8 @@
 {
-  "name": "mom-helper-backend",
+  "name": "backend-project-name",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "NodeJS & NestJS",
+  "author": "Evgeniy Anisimov",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
